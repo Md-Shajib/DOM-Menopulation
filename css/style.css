@@ -1,0 +1,14 @@
+article{
+    padding: 10px 20px;
+    margin: 15px;
+    border: 1px solid #828282;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #dbdbdb;
+    background-color: #f7fffc;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
