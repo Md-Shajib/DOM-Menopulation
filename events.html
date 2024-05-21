@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in js</title>
+</head>
+
+<body id="Body">
+    <div class="main">
+        <div class="paragraph">
+            <div class="text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum commodi ad cupiditate praesentium
+                    tenetur error quae alias magni quos qui eveniet veritatis quas, maxime iure neque quam voluptatibus
+                    reiciendis similique atque ratione in aperiam illum adipisci! Aliquid, quo, modi optio earum, error
+                    voluptate ipsum maiores beatae distinctio quae odio ut temporibus? Hic id sint voluptate deserunt,
+                    commodi, soluta ut nulla error omnis laboriosam, libero ducimus et rem non officia enim.</p>
+            </div>
+            <div class="text">
+                <p>Molestias ea praesentium blanditiis vero, fuga corrupti. Dolorum animi provident eius, rerum nostrum
+                    officia suscipit dolore sit. Porro doloremque adipisci aliquam vel commodi, nulla quo praesentium
+                    iusto accusantium quia et dolorum est quaerat voluptates aperiam beatae possimus eos quod. Minima,
+                    in. Facilis quisquam officiis, reprehenderit maiores consequuntur sapiente, soluta consequatur quia
+                    aspernatur impedit quaerat molestiae, ducimus delectus vitae eligendi dolorem odit ipsum laudantium
+                    adipisci nesciunt placeat? Consequatur sit cum magnam?</p>
+            </div>
+            <div class="text">
+                <p>Recusandae molestiae fugiat expedita molestias id eaque. In facilis minima voluptatem dolore
+                    reiciendis nihil! Doloremque quibusdam optio incidunt, fuga sed deleniti accusantium, quis
+                    temporibus esse at maxime, deserunt sunt eaque? Iure autem nulla enim ullam impedit. Odit placeat ab
+                    dolores repellat nisi repudiandae dolorum aspernatur rerum velit, nemo dignissimos? Adipisci, ea
+                    reprehenderit veniam at necessitatibus iusto qui laboriosam, doloremque laudantium omnis sequi
+                    similique voluptatem nihil ab ipsa autem? Accusantium, consequuntur?</p>
+            </div>
+        </div>
+        <div>
+            <h3>Product List</h3>
+            <ul id="productList">
+                <li id="item1">lorem - 1</li>
+                <li>lorem - 2</li>
+                <li>lorem - 3</li>
+                <li>lorem - 4</li>
+                <li>lorem - 5</li>
+            </ul>
+            <button id="addNew">Add New</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('Body').style.backgroundColor = "#0a3d62"
+        let textArea = document.getElementsByClassName('text');
+        for (let i = 0; i < textArea.length; i++) {
+            const text = textArea[i];
+            text.style.backgroundColor = "#192a56";
+            text.style.color = "#f6b93b";
+            text.style.padding = "1rem";
+            text.style.border = "2px solid #44bd32";
+            text.style.borderRadius = "10px";
+            text.style.marginTop = "10px"
+        }
+        document.getElementById('addNew').addEventListener('click', function (event) {
+            let parent = document.getElementById('productList');
+            let newElement = document.createElement('li');
+            newElement.innerText = 'Added by button';
+            parent.appendChild(newElement);
+        })
+        document.getElementById('productList').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+
+</html>
